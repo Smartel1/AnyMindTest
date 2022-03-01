@@ -1,0 +1,23 @@
+spring:
+  jackson:
+    deserialization:
+      ADJUST_DATES_TO_CONTEXT_TIME_ZONE: false
+    serialization:
+      WRITE_BIGDECIMAL_AS_PLAIN: true
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+  h2:
+    console.enabled: true
+  liquibase:
+    url: jdbc:h2:mem:testdb;MODE=POSTGRESQL
+    user: sa
+    password:
+    change-log: classpath:/db/migration/db-changelog.yml
+server:
+  error:
+    include-message: ALWAYS

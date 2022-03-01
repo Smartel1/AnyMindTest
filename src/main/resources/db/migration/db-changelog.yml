@@ -1,0 +1,3 @@
+databaseChangeLog:
+  - include:
+      file: db/migration/20220301-1-create-transfers-table.sql
